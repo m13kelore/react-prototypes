@@ -16,9 +16,13 @@ const greeting = user => {
   return element;
 };
 
-let user = {
-  name: "Keith",
-  luckyNumber: luckyNumber()
-};
+class user {
+  constructor(name) {
+    this.name = name;
+    this.luckyNumber = luckyNumber();
+  }
+}
 
-ReactDOM.render(greeting(user), document.getElementById("root"));
+const lance = new user("Lance");
+
+ReactDOM.render(greeting(lance), document.getElementById("root"));
