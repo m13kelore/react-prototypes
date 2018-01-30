@@ -1,13 +1,13 @@
 import React from 'react';
-import puppy from './images/corgi-puppy-6.jpg';
+import imageData from './image_data';
+import ScrapbookImage from './scrapbook_image';
 import './scrapbook.css';
 
 const Scrapbook = () => {
-	return (
-		<div className="scrapbook-container">
-			<img src={puppy} />
-		</div>
-	);
+	const images = imageData.map((image, index) => {
+		return <ScrapbookImage key={index} about={image} />;
+	});
+	return <div className="scrapbook-container">{images}</div>;
 };
 
 export default Scrapbook;
